@@ -1,0 +1,96 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #e2e1e0;
+}
+
+.profile-card {
+    width: 340px;
+    height: 420px;
+    background: #ffffff;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+    transition: transform 0.3s ease;
+}
+
+.profile-card:hover {
+    transform: scale(1.03);
+}
+
+.profile-card img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    margin-top: -60px;
+    border: 5px solid #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.profile-name {
+    margin: 20px 0 10px;
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+}
+
+.profile-occupation {
+    margin-bottom: 10px;
+    font-size: 18px;
+    color: #606060;
+    font-style: italic;
+}
+
+.profile-description {
+    text-align: center;
+    margin: 10px 0 20px;
+    font-size: 15px;
+    color: #444;
+    padding: 0 25px;
+}
+
+.profile-contact {
+    margin-top: auto;
+}
+
+.profile-contact div {
+    margin-bottom: 15px;
+}
+
+.profile-contact a {
+    color: #333;
+    transition: color 0.3s ease;
+}
+
+.profile-contact a:hover {
+    color: #007bff;
+}
+
+.profile-contact img {
+    width: 45px;
+    height: 45px;
+    margin: 0 5px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 50%;
+}
+
+.profile-contact img:hover {
+    transform: scale(1.15);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.profile-contact p {
+    margin: 4px 0;
+    font-size: 16px;
+}
+
+.profile-contact p a {
+    font-weight: bold;
+}
