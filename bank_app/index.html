@@ -62,8 +62,11 @@
         // Operations
         rabbilAccount.deposit(500);
         rabbilAccount.withdraw(200);
+        
         hasinAccount.deposit(1000);
-        hasinAccount.withdraw(1200); // Insufficient funds if withdrawal exceeds balance
+        
+        // Insufficient funds if withdrawal exceeds balance
+        hasinAccount.withdraw(1200); 
 
         // Display account info
         rabbilAccount.displayAccountInfo();
