@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bank Management System</title>
+    <link href="https://cdn.tailwindcss.com" rel="stylesheet">
+</head>
+<body class="bg-gray-100 text-gray-800">
+    <div class="min-h-screen flex items-center justify-center">
+        <div>
+            <h1 class="text-4xl font-bold text-center text-gray-700 mb-10">Bank Management System</h1>
+            <div id="accounts" class="space-y-5">
+                <!-- Account details will be added here -->
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        class BankAccount {
+            constructor(accountNumber, ownerName, balance = 0) {
+                this.accountNumber = accountNumber;
+                this.ownerName = ownerName;
+                this.balance = balance;
+            }
+
+            deposit(amount) {
+                if (amount > 0) {
+                    this.balance += amount;
+                } else {
+                    alert("Please enter a positive amount to deposit.");
+                }
+            }
+
+            withdraw(amount) {
+                if (amount <= this.balance) {
+                    this.balance -= amount;
+                } else {
+                    alert(`Insufficient funds. Current balance: $${this.balance.toFixed(2)}`);
+                }
+            }
+
+            getBalance() {
+                return this.balance;
+            }
+
+            displayAccountInfo() {
+                const accountDiv = document.createElement('div');
+                accountDiv.className = 'p-6 max-w-sm bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700';
+                accountDiv.innerHTML = `<h3 class="text-lg font-semibold">Account Information</h3>
+                                        <p class="text-md text-gray-500">Account Number: ${this.accountNumber}</p>
+                                        <p class="text-md text-gray-500">Owner Name: ${this.ownerName}</p>
+                                        <p class="text-md font-bold text-gray-700">Balance: $${this.balance.toFixed(2)}</p>`;
+                document.getElementById('accounts').appendChild(accountDiv);
+            }
+        }
+
+        // Create two bank account instances
+        const rabbilAccount = new BankAccount(1001, 'Mr. Rabbil Hasan Rupom');
+        const hasinAccount = new BankAccount(1002, 'Mr. Hasin Haider');
+
+        // Operations
+        rabbilAccount.deposit(500);
+        rabbilAccount.withdraw(200);
+        hasinAccount.deposit(1000);
+        hasinAccount.withdraw(1200); // Insufficient funds if withdrawal exceeds balance
+
+        // Display account info
+        rabbilAccount.displayAccountInfo();
+        hasinAccount.displayAccountInfo();
+    </script>
+</body>
+</html>
